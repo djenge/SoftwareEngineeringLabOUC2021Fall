@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,13 +40,14 @@ INSTALLED_APPS = [
     'login',
     'comment',
     'purchase',
+    'register',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',  # 需要记录cookies，注释该语句
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -69,6 +70,10 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+    ]
 
 WSGI_APPLICATION = 'LenovoShop.wsgi.application'
 
