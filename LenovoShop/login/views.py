@@ -6,12 +6,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-from LenovoShop.login.models import User
+from login.models import User
 
 
 # 简单过滤器，验证是否已经登录
 def verification(request):
-    login_session=request.session['IS_LOGIN']
+    login_session = request.session['IS_LOGIN']
     if login_session is not None and login_session:
         return True
     else:
@@ -19,7 +19,7 @@ def verification(request):
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the login index")
+    return render(request, './index/index.html')
 
 
 def login(request):
@@ -111,5 +111,5 @@ def reset_password(request):
 
 
 def logout(requst):
-    django.contrib.auth.logout()    # 清除所有session
+    django.contrib.auth.logout()  # 清除所有session
     return render(requst, 'index.html')

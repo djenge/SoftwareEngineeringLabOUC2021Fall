@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 
 # Create your views here.
-from LenovoShop.purchase.models import Item
+from purchase.models import Item
 
 
 # 获取商品的所有评论

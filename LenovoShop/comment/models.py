@@ -1,6 +1,5 @@
 from django.db import models
-from ..login.models import User
-from ..purchase.models import Item
+from login.models import User
 
 
 # Create your models here.
