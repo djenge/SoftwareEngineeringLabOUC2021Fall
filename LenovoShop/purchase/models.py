@@ -57,7 +57,7 @@ class Transaction(models.Model):
     # 交易用户
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     # 购买的商品
-    item = models.ForeignKey(Item,on_delete=models.DO_NOTHING)
+    item = models.ForeignKey(Item, on_delete=models.DO_NOTHING)
     # 交易时间
     transaction_time = models.DateTimeField()
     # 运费, 默认0
