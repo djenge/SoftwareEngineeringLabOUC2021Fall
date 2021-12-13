@@ -1,7 +1,8 @@
 from django.db import models
 
 # Create your models here.
-from login.models import User
+from ..login.models import User
+from ..comment.models import Comment
 
 
 # 处理器模型
@@ -36,6 +37,8 @@ class Monitor(models.Model):
 
 # 商品模型
 class Item(models.Model):
+    # 商品ID，方便与评论关联
+    id = models.IntegerField()
     # 商品名称
     name = models.CharField(max_length=200)
     # 商品价格
@@ -48,6 +51,8 @@ class Item(models.Model):
     monitor = models.ForeignKey(Monitor, on_delete=models.DO_NOTHING)
     # 商品样本图片
     sample_pic = models.ImageField(blank=True, null=True)
+    # 关联评论
+    item_comments = models.ForeignKey(Comment, on_delete=models.DO_NOTHING)
 
 
 # 交易模型
