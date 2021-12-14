@@ -1,6 +1,5 @@
 from django.db import models
-from ..login.models import User
-from ..purchase.models import Item
+from user.models  import UserModel as User 
 
 
 # Create your models here.
@@ -15,3 +14,6 @@ class Comment(models.Model):
     comment_time = models.DateTimeField()
     # 上一条回复，类型也是评论，这时需要使用继承
     # latest_reply =
+
+    # 评论内容
+    comment_content = models.TextField()
