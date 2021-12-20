@@ -12,7 +12,7 @@ from django.urls import reverse
 # 个人主页
 def home(request):
     if request.user.is_authenticated:
-        return render(request, 'home.html')
+        return render(request, 'home/index.html')
     else:    
         date = "you are not login in"
         return HttpResponseRedirect('/user/login')
