@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'shopping/css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'shopping/css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'shopping/css/cart.css' %}">
+    <script src="{% static 'shopping/js/jquery.min.js' %}"></script>
+    <script src="{% static 'shopping/js/base.js' %}"></script>
+    <script src="{% static 'shopping/js/cart.js' %}"></script>
+</head>
+<body>
+    <div class="shortcut">
+        <div class="w">
+            <ul class="fl city">
+                <li><i class="f10"></i><a href="#">北京</a></li>
+            </ul>
+            <ul class="fr nav">
+                <li>
+                    <a href="login.html">你好，请登录</a>
+                    <a href="register.html" class="f10">免费注册</a>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <a href="pay.html">我的订单</a>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <a href="#">我的联想</a>
+                    <i></i>
+                    <div class="dropdown-layer">
+                        <dl class="d">
+                            <dd><a href="#">待处理订单</a></dd>
+                            <dd><a href="#">返修退换货</a></dd>
+                            <dd><a href="#">降价商品</a></dd>
+                        </dl>
+                        <dl class="d">
+                            <dd><a href="#">消息</a></dd>
+                            <dd><a href="#">我的问答</a></dd>
+                            <dd><a href="#">我的关注</a></dd>
+                        </dl>
+                        <dl>
+            
+                        </dl>
+                        <dl>
+                            <dd><a href="#">我的优惠券</a></dd>
+                            <dd><a href="#">我的理财</a></dd>
+                        </dl>
+                    </div>
+                </li>
+                <li class="space"></li>
+                <li class="space"></li>
+                <li>
+                    <a href="#">企业采购</a>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <a href="#">客户服务</a>
+                    <i></i>
+                    <div class="dropdown-layer">
+                        <dl class="d">
+                            <dd><a href="#">待处理订单</a></dd>
+                            <dd><a href="#">返修退换货</a></dd>
+                            <dd><a href="#">降价商品</a></dd>
+                        </dl>
+                        <dl class="d">
+                            <dd><a href="#">消息</a></dd>
+                            <dd><a href="#">我的问答</a></dd>
+                            <dd><a href="#">我的关注</a></dd>
+                        </dl>
+                        <dl>
+                         
+                        </dl>
+                        <dl>
+                            <dd><a href="#">我的优惠券</a></dd>
+                            <dd><a href="#">我的理财</a></dd>
+                        </dl>
+                    </div>
+                </li>
+                <li class="space"></li>
+                <li>
+                    <a href="#">网站导航</a>
+                    <i></i>
+                    <div class="dropdown-layer">
+                        <dl class="d">
+                            <dd><a href="#">待处理订单</a></dd>
+                            <dd><a href="#">返修退换货</a></dd>
+                            <dd><a href="#">降价商品</a></dd>
+                        </dl>
+                        <dl class="d">
+                            <dd><a href="#">消息</a></dd>
+                            <dd><a href="#">我的问答</a></dd>
+                            <dd><a href="#">我的关注</a></dd>
+                        </dl>
+                        <dl>
+                   
+                        </dl>
+                        <dl>
+                            <dd><a href="#">我的优惠券</a></dd>
+                            <dd><a href="#">我的理财</a></dd>
+                        </dl>
+                    </div>
+                </li>
+                <li class="space"></li>
+               
+            </ul>
+        </div>
+    </div>
+    <div class="m">
+        <div class="w middle">
+            <div class="logo">
+            <h1>  <!-- 提高权重 便利于搜索引擎优化 -->
+                <a href="index.html" title="联想">联想</a>   
+            </h1>
+            </div>
+            <div class="form">
+                <input id="text" type="text" placeholder="">
+                <button><i></i></button> 
+            </div>
+            <div class="shopCar">
+                <i></i><a href="cart.html" class="f10">我的购物车</a><span>8</span>
+            </div>
+            <div class="hotwords">
+                <a href="#" class="f10">199减100</a>
+                <a href="#">鼠标试用</a>
+                
+                <a href="#">智能手表</a>
+            </div>
+            <div class="navitems">
+            <ul>
+                <li><a href="list.html">秒杀</a></li>
+                <li><a href="#">优惠券</a></li>
+                <li><a href="#">闪购</a></li>
+                <li><a href="#">拍卖</a></li>
+                <li class="space "></li>
+                <li><a href="#">全球购</a></li>
+                <li class="space"></li>
+
+            </ul>
+            </div>
+            <div class="super">
+                <a href="#"><img src="{% static 'shopping/images/super.png' %}" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="py-container">
+        <div class="w">
+            <div class="allgoods">
+                <h4>全部商品
+                    <span>11</span>
+                </h4>       
+                <div class="cart-main">
+                    <div class="cart-th clearfix">
+                        <div><input type="checkbox">全选</div>
+                        <div class="">商品</div>
+                        <div class="">单价（元）</div>
+                        <div class="">数量</div>
+                        <div class="">小计（元）</div>
+                        <div class="">操作</div>
+                    </div>
+                    <div class="cart-title clearfix">
+                        <h5 class="fl">传智自营</h5>
+                        <div class="yunfei fr">
+                            运费：￥6.00
+                            <span>还差￥99.00免运费</span>
+                        </div>
+                    </div>
+                    <div class="cart-item-list">
+                        <div class="cart-body">
+                            <div class="cart-list">
+                                <ul class="goods-list yui3-g">
+                                    <li class="yui3-u-3-8 pr">
+                                        <input type="checkbox" class="good-checkbox">
+                                        <div class="good-item">
+                                            <div class="item-img">
+                                                <img src="{% static 'shopping/uploads/mobile.png' %}">
+                                            </div>
+                                            <div class="item-msg">Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存</div>
+                                        </div>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span>颜色: 银色</span>
+                                        <br>
+                                        <span>处理器: Core I5</span>
+                                        <br>
+                                        <span>内存: 8GB</span>
+                                        <br>
+                                        <span>尺寸: 13.3英寸</span>
+                                        <br>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span class="price">8848.00</span>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <div class="clearfix">
+                                            <a href="javascript:;" class="increment mins">-</a>
+                                            <input autocomplete="off" type="text" value="1" minnum="1" class="itxt">
+                                            <a href="javascript:;" class="increment plus">+</a>
+                                        </div>
+                                        <div class="youhuo">有货</div>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span class="sum">8848.00</span>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <div class="del1">
+                                            <a href="javascript:;">删除</a>
+                                        </div>
+                                        <div>移到我的关注</div>
+                                    </li>
+                                </ul>
+                                <ul class="goods-list yui3-g">
+                                    <li class="yui3-u-3-8 pr">
+                                        <input type="checkbox" class="good-checkbox">
+                                        <div class="good-item">
+                                            <div class="item-img">
+                                                <img src="{% static 'shopping/uploads/mobile.png' %}">
+                                            </div>
+                                            <div class="item-msg">Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存</div>
+                                        </div>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span>颜色: 银色</span>
+                                        <br>
+                                        <span>处理器: Core I5</span>
+                                        <br>
+                                        <span>内存: 8GB</span>
+                                        <br>
+                                        <span>尺寸: 13.3英寸</span>
+                                        <br>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span class="price">8848.00</span>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <div class="clearfix">
+                                            <a href="javascript:;" class="increment mins">-</a>
+                                            <input autocomplete="off" type="text" value="1" minnum="1" class="itxt">
+                                            <a href="javascript:;" class="increment plus">+</a>
+                                        </div>
+                                        <div class="youhuo">有货</div>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span class="sum">8848.00</span>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <div class="del1">
+                                            <a href="javascript:;">删除</a>
+                                        </div>
+                                        <div>移到我的关注</div>
+                                    </li>
+                                </ul>
+                                <ul class="goods-list active yui3-g">
+                                    <li class="yui3-u-3-8 pr">
+                                        <input type="checkbox" class="good-checkbox">
+                                        <div class="good-item">
+                                            <div class="item-img">
+                                                <img src="{% static 'shopping/uploads/mobile.png' %}">
+                                            </div>
+                                            <div class="item-msg">Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存</div>
+                                        </div>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span>颜色: 银色</span>
+                                        <br>
+                                        <span>处理器: Core I5</span>
+                                        <br>
+                                        <span>内存: 8GB</span>
+                                        <br>
+                                        <span>尺寸: 13.3英寸</span>
+                                        <br>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span class="price">8848.00</span>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <div class="clearfix">
+                                            <a href="javascript:;" class="increment mins">-</a>
+                                            <input autocomplete="off" type="text" value="1" minnum="1" class="itxt">
+                                            <a href="javascript:;" class="increment plus">+</a>
+                                        </div>
+                                        <div class="youhuo">有货</div>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span class="sum">8848.00</span>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <div class="del1">
+                                            <a href="javascript:;">删除</a>
+                                        </div>
+                                        <div>移到我的关注</div>
+                                    </li>
+                                </ul>
+                                <ul class="goods-list yui3-g">
+                                    <li class="yui3-u-3-8 pr">
+                                        <input type="checkbox" class="good-checkbox">
+                                        <div class="good-item">
+                                            <div class="item-img">
+                                                <img src="{% static 'shopping/uploads/mobile.png' %}">
+                                            </div>
+                                            <div class="item-msg">Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存</div>
+                                        </div>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span>颜色: 银色</span>
+                                        <br>
+                                        <span>处理器: Core I5</span>
+                                        <br>
+                                        <span>内存: 8GB</span>
+                                        <br>
+                                        <span>尺寸: 13.3英寸</span>
+                                        <br>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span class="price">8848.00</span>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <div class="clearfix">
+                                            <a href="javascript:;" class="increment mins">-</a>
+                                            <input autocomplete="off" type="text" value="1" minnum="1" class="itxt">
+                                            <a href="javascript:;" class="increment plus">+</a>
+                                        </div>
+                                        <div class="youhuo">有货</div>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span class="sum">8848.00</span>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <div class="del1">
+                                            <a href="javascript:;">删除</a>
+                                        </div>
+                                        <div>移到我的关注</div>
+                                    </li>
+                                </ul>
+                                <ul class="goods-list yui3-g">
+                                    <li class="yui3-u-3-8 pr">
+                                        <input type="checkbox" class="good-checkbox">
+                                        <div class="good-item">
+                                            <div class="item-img">
+                                                <img src="{% static 'shopping/uploads/mobile.png' %}">
+                                            </div>
+                                            <div class="item-msg">Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存</div>
+                                        </div>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span>颜色: 银色</span>
+                                        <br>
+                                        <span>处理器: Core I5</span>
+                                        <br>
+                                        <span>内存: 8GB</span>
+                                        <br>
+                                        <span>尺寸: 13.3英寸</span>
+                                        <br>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span class="price">8848.00</span>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <div class="clearfix">
+                                            <a href="javascript:;" class="increment mins">-</a>
+                                            <input autocomplete="off" type="text" value="1" minnum="1" class="itxt">
+                                            <a href="javascript:;" class="increment plus">+</a>
+                                        </div>
+                                        <div class="youhuo">有货</div>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <span class="sum">8848.00</span>
+                                    </li>
+                                    <li class="yui3-u-1-8">
+                                        <div class="del1">
+                                            <a href="javascript:;">删除</a>
+                                        </div>
+                                        <div>移到我的关注</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-tool clearfix">
+                    <div class="money-box">
+                        <div class="sumprice">
+                            <div class="sumprice-top">
+                                <span>
+                                    已选择
+                                    <strong>0</strong> 件商品</span>
+                                <span>
+                                <em>总价（不含运费）：</em>
+                                <i class="summoney">￥<span>44240.00</span></i>
+                            </div>
+                            <div class="sumprice-bottom">
+                                已节省：￥20.00
+                            </div>
+                        </div>
+                        <div class="sumbtn">
+                            <a class="sum-btn" href="pay.html">结算</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

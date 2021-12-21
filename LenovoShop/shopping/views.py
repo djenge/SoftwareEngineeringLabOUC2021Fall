@@ -19,7 +19,7 @@ def detail(request):
             'kinds': kinds,
             'goods': goods
         }
-        return render(request, 'detail.html', data)
+        return render(request, 'shopping/detail.html', data)
 
 
 # 增加商品数量
@@ -116,7 +116,7 @@ def buy_cart(request):
         user = request.user
         carts = CartInfo.objects.filter(user=user)
         data = {'carts': carts}
-        return render(request, 'cart.html', data)
+        return render(request, 'shopping/cart.html', data)
 
 
 # 计算商品总价

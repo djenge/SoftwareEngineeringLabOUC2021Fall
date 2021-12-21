@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>列表页</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'shopping/css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'shopping/css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'shopping/css/list.css' %}" />
+    <script src="{% static 'shopping/js/jquery.min.js' %}"></script>
+    <script src="{% static 'shopping/js/base.js' %}"></script>
+    <script src="{% static 'shopping/js/list.js' %}"></script>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <div class="shortcut">
+        <div class="w">
+            <ul class="fl city">
+                <li><i class="f10"></i><a href="#">北京</a></li>
+            </ul>
+            <ul class="fr nav">
+            <li>
+                <a href="#">你好，请登录</a>
+                <a href="#" class="f10">免费注册</a>
+            </li>
+            <li class="space"></li>
+            <li>
+                <a href="pay.html">我的订单</a>
+            </li>
+            <li class="space"></li>
+            <li>
+                <a href="#">我的联想</a>
+                <i></i>
+                <div class="dropdown-layer">
+                    <dl class="d">
+                        <dd><a href="#">待处理订单</a></dd>
+                        <dd><a href="#">返修退换货</a></dd>
+                        <dd><a href="#">降价商品</a></dd>
+                    </dl>
+                    <dl class="d">
+                        <dd><a href="#">消息</a></dd>
+                        <dd><a href="#">我的问答</a></dd>
+                        <dd><a href="#">我的关注</a></dd>
+                    </dl>
+                    <dl>
+                        <dd><a href="#">我的联想</a></dd>
+                    </dl>
+                    <dl>
+                        <dd><a href="#">我的优惠券</a></dd>
+                        <dd><a href="#">我的理财</a></dd>
+                    </dl>
+                </div>
+            </li>
+            <li class="space"></li>
+            <li>
+                <a href="#">联想会员</a>
+            </li>
+
+            <li class="space"></li>
+            <li>
+                <a href="#">企业采购</a>
+            </li>
+            <li class="space"></li>
+            <li>
+                <a href="#">客户服务</a>
+                <i></i>
+                <div class="dropdown-layer">
+                    <dl class="d">
+                        <dd><a href="#">待处理订单</a></dd>
+                        <dd><a href="#">返修退换货</a></dd>
+                        <dd><a href="#">降价商品</a></dd>
+                    </dl>
+                    <dl class="d">
+                        <dd><a href="#">消息</a></dd>
+                        <dd><a href="#">我的问答</a></dd>
+                        <dd><a href="#">我的关注</a></dd>
+                    </dl>
+                    <dl>
+                        <dd><a href="#">我的优惠券</a></dd>
+                        <dd><a href="#">我的理财</a></dd>
+                    </dl>
+                </div>
+            </li>
+            <li class="space"></li>
+            <li>
+                <a href="#">网站导航</a>
+                <i></i>
+                <div class="dropdown-layer">
+                    <dl class="d">
+                        <dd><a href="#">待处理订单</a></dd>
+                        <dd><a href="#">返修退换货</a></dd>
+                        <dd><a href="#">降价商品</a></dd>
+                    </dl>
+                    <dl class="d">
+                        <dd><a href="#">消息</a></dd>
+                        <dd><a href="#">我的问答</a></dd>
+                        <dd><a href="#">我的关注</a></dd>
+                    </dl>
+                    <dl>
+                        <dd><a href="#">我的优惠券</a></dd>
+                        <dd><a href="#">我的理财</a></dd>
+                    </dl>
+                </div>
+            </li>
+            <li class="space"></li>
+           
+        </ul>
+        </div>
+    </div>
+    <div class="m">
+        <div class="w middle">
+            <div class="logo">
+            <h1 class="small">  <!-- 提高权重 便利于搜索引擎优化 -->
+                <a href="index.html" title="联想">联想</a>   
+            </h1>
+            </div>
+            <div class="sk">
+                <img src="{% static 'shopping/uploads/secKill_03.png' %}" alt="">
+            </div>
+            <div class="form">
+            <input id="text" type="text" placeholder="">
+            <button><i></i></button> 
+            </div>
+            <div class="shopCar">
+            <i></i><a href="cart.html" class="f10">我的购物车</a><span>8</span>
+            </div>
+            <div class="hotwords">
+            <a href="#" class="f10">199减100</a>
+            <a href="#">鼠标试用</a>
+            <a href="#">低至29元</a>
+            <a href="#">智能手表</a>
+            </div>
+            <div class="sk_navi w">
+                <div class="sk_list fl">
+                    <ul>
+                        <li class="current"><a href="#">联想秒杀</a></li>
+                    </ul>
+                </div>
+                <div class="sk_more fr">
+                    <a href="#">
+                        更多分类
+                        <i></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="sk_hd">
+        <img src="images/header_textV2.png" alt="">
+    </div> -->
+    <div class="w sk_container">
+        <div class="sk_bd">
+            <ul>
+                <li class="sk_goods">
+                    <a href="detail.html"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt=""></a>
+                    <h5 class="sk_goods_title">【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑 </h5>
+                    <p class="sk_goods_price"><em>¥4758.00</em> <del>￥5488</del></p>
+                    <div class="sk_goods_progress">
+                        已售<i>87%</i>
+                        <div class="bar">
+                            <div class="bar_in"></div>
+                        </div>
+                        剩余<em>29</em>件
+                    </div>
+                    <a href="detail.html" class="sk_goods_buy">立即抢购</a>
+                </li>
+                <li class="sk_goods">
+                    <a href="detail.html"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt=""></a>
+                    <h5 class="sk_goods_title">【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑 </h5>
+                    <p class="sk_goods_price"><em>¥4758.00</em> <del>￥5488</del></p>
+                    <div class="sk_goods_progress">
+                        已售<i>87%</i>
+                        <div class="bar">
+                            <div class="bar_in"></div>
+                        </div>
+                        剩余<em>29</em>件
+                    </div>
+                    <a href="detail.html" class="sk_goods_buy">立即抢购</a>
+                </li>
+                <li class="sk_goods">
+                    <a href="detail.html"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt=""></a>
+                    <h5 class="sk_goods_title">【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑 </h5>
+                    <p class="sk_goods_price"><em>¥4758.00</em> <del>￥5488</del></p>
+                    <div class="sk_goods_progress">
+                        已售<i>87%</i>
+                        <div class="bar">
+                            <div class="bar_in"></div>
+                        </div>
+                        剩余<em>29</em>件
+                    </div>
+                    <a href="detail.html" class="sk_goods_buy">立即抢购</a>
+                </li>
+                <li class="sk_goods">
+                    <a href="detail.html"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt=""></a>
+                    <h5 class="sk_goods_title">【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑 </h5>
+                    <p class="sk_goods_price"><em>¥4758.00</em> <del>￥5488</del></p>
+                    <div class="sk_goods_progress">
+                        已售<i>87%</i>
+                        <div class="bar">
+                            <div class="bar_in"></div>
+                        </div>
+                        剩余<em>29</em>件
+                    </div>
+                    <a href="detail.html" class="sk_goods_buy">立即抢购</a>
+                </li>
+                <li class="sk_goods">
+                    <a href="detail.html"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt=""></a>
+                    <h5 class="sk_goods_title">【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑 </h5>
+                    <p class="sk_goods_price"><em>¥4758.00</em> <del>￥5488</del></p>
+                    <div class="sk_goods_progress">
+                        已售<i>87%</i>
+                        <div class="bar">
+                            <div class="bar_in"></div>
+                        </div>
+                        剩余<em>29</em>件
+                    </div>
+                    <a href="detail.html" class="sk_goods_buy">立即抢购</a>
+                </li>
+                <li class="sk_goods">
+                    <a href="detail.html"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt=""></a>
+                    <h5 class="sk_goods_title">【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑 </h5>
+                    <p class="sk_goods_price"><em>¥4758.00</em> <del>￥5488</del></p>
+                    <div class="sk_goods_progress">
+                        已售<i>87%</i>
+                        <div class="bar">
+                            <div class="bar_in"></div>
+                        </div>
+                        剩余<em>29</em>件
+                    </div>
+                    <a href="detail.html" class="sk_goods_buy">立即抢购</a>
+                </li>
+                <li class="sk_goods">
+                    <a href="detail.html"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt=""></a>
+                    <h5 class="sk_goods_title">【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑 </h5>
+                    <p class="sk_goods_price"><em>¥4758.00</em> <del>￥5488</del></p>
+                    <div class="sk_goods_progress">
+                        已售<i>87%</i>
+                        <div class="bar">
+                            <div class="bar_in"></div>
+                        </div>
+                        剩余<em>29</em>件
+                    </div>
+                    <a href="detail.html" class="sk_goods_buy">立即抢购</a>
+                </li>
+                <li class="sk_goods">
+                    <a href="detail.html"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt=""></a>
+                    <h5 class="sk_goods_title">【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑 </h5>
+                    <p class="sk_goods_price"><em>¥4758.00</em> <del>￥5488</del></p>
+                    <div class="sk_goods_progress">
+                        已售<i>87%</i>
+                        <div class="bar">
+                            <div class="bar_in"></div>
+                        </div>
+                        剩余<em>29</em>件
+                    </div>
+                    <a href="detail.html" class="sk_goods_buy">立即抢购</a>
+                </li>
+                <li class="sk_goods">
+                    <a href="detail.html"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt=""></a>
+                    <h5 class="sk_goods_title">【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑 </h5>
+                    <p class="sk_goods_price"><em>¥4758.00</em> <del>￥5488</del></p>
+                    <div class="sk_goods_progress">
+                        已售<i>87%</i>
+                        <div class="bar">
+                            <div class="bar_in"></div>
+                        </div>
+                        剩余<em>29</em>件
+                    </div>
+                    <a href="detail.html" class="sk_goods_buy">立即抢购</a>
+                </li>
+                <li class="sk_goods">
+                    <a href="detail.html"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt=""></a>
+                    <h5 class="sk_goods_title">【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑 </h5>
+                    <p class="sk_goods_price"><em>¥4758.00</em> <del>￥5488</del></p>
+                    <div class="sk_goods_progress">
+                        已售<i>87%</i>
+                        <div class="bar">
+                            <div class="bar_in"></div>
+                        </div>
+                        剩余<em>29</em>件
+                    </div>
+                    <a href="detail.html" class="sk_goods_buy">立即抢购</a>
+                </li>
+                <li class="sk_goods">
+                    <a href="detail.html"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt=""></a>
+                    <h5 class="sk_goods_title">【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑 </h5>
+                    <p class="sk_goods_price"><em>¥4758.00</em> <del>￥5488</del></p>
+                    <div class="sk_goods_progress">
+                        已售<i>87%</i>
+                        <div class="bar">
+                            <div class="bar_in"></div>
+                        </div>
+                        剩余<em>29</em>件
+                    </div>
+                    <a href="detail.html" class="sk_goods_buy">立即抢购</a>
+                </li>
+                <li class="sk_goods">
+                    <a href="detail.html"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt=""></a>
+                    <h5 class="sk_goods_title">【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑 </h5>
+                    <p class="sk_goods_price"><em>¥4758.00</em> <del>￥5488</del></p>
+                    <div class="sk_goods_progress">
+                        已售<i>87%</i>
+                        <div class="bar">
+                            <div class="bar_in"></div>
+                        </div>
+                        剩余<em>29</em>件
+                    </div>
+                    <a href="detail.html" class="sk_goods_buy">立即抢购</a>
+                </li>
+            </ul>
+        </div>
+        <div class="sk_page">
+            <span class="page_num">
+                <a href="#" class="pn-prev">&lt;&lt; 上一页</a>
+                <a href="#">1</a>
+                <a href="#" class="current">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#" class="dotted">...</a>
+                <a href="#" class="pn-next">下一页&gt;&gt;</a>
+            </span>
+            <span class="page_skip">
+                共10页 到第
+                <input type="text"> 页 
+                <button>确定</button>
+            </span>
+        </div>
+    </div>
+
+</body>
+</html>
