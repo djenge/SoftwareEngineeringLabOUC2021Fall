@@ -9,7 +9,7 @@ from store.models import GoodsValue, ArticleCategory
 #to do it 
 
 def index(request):
-    pass
+    return render(request, "store/index.html")
 
 
 # 商品列表
