@@ -6,6 +6,7 @@ from user.models import UserModel ,UserTicketModel
 from django.contrib.auth.hashers import make_password, check_password
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth import logout
 # Create your views here.
 
 
@@ -17,8 +18,6 @@ def home(request):
         date = "you are not login in"
         return HttpResponseRedirect('/user/login')
         
-
-
 
 # 注册
 def register(request):
@@ -37,9 +36,16 @@ def register(request):
             }
             return render(request, 'register/register.html', {'data':data})
         # 加密password
-        if(password != password):
+        if(password != password_c):
             data = { 'msg': '两次密码不同' }
             return render(request, 'register/register.html', {'data':data})
+        if UserModel.objects.filter(username=username).exists():
+            data = {'msg':'该用户名已被注册'}
+            return render(request, 'register/register.html', {'data':data})
+        if UserModel.objects.filter(email=email).exists():
+            data = {'msg':'该邮箱已被注册'}
+            return render(request, 'register/register.html', {'data':data})            
+            
         password = make_password(password)
         password_c = make_password(password_c)
         # 创建用户并添加到数据库
@@ -93,13 +99,13 @@ def login(request):
 
 # 退出
 def logout(request):
-    if request.method == 'GET':
-        # 退出则删除数据库中的ticket值
-        ticket = request.COOKIES.get('ticket')
-        user_ticket = UserTicketModel.objects.filter(ticket=ticket).first()
-        UserTicketModel.objects.filter(user=user_ticket.user).delete()
-        return HttpResponseRedirect(reverse('user:login'))
-
+    if request.user.is_authenticated:
+        if request.method == 'GET':
+            response = HttpResponseRedirect('/user/login')
+            response.delete_cookie('ticket')
+            return HttpResponseRedirect('/user/login')
+    else:
+        return HttpResponseRedirect('/user/login')
 
 def get_ticket():
     pass
