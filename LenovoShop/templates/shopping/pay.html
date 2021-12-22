@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <head>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/pay.css" />
-    <script src="js/jquery.min.js"></script>
-    <script src="js/base.js"></script>
-    <script src="js/pay.js"></script>
+    <link rel="stylesheet" href="{% static 'shopping/css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'shopping/css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'shopping/css/pay.css' %}" />
+    <script src="{% static 'shopping/js/jquery.min.js' %}"></script>
+    <script src="{% static 'shopping/js/base.js' %}"></script>
+    <script src="{% static 'shopping/js/pay.js' %}"></script>
 </head>
 <body>
     <div class="shortcut">
@@ -135,7 +135,7 @@
                 </ul>
             </div>
             <div class="super">
-                <a href="#"><img src="images/super.png" alt=""></a>
+                <a href="#"><img src="{%static 'shopping/images/super.png' %}" alt=""></a>
             </div>
         </div>
     </div>
@@ -185,7 +185,7 @@
                         <span>订单详情</span>
                         <div class="me-bs">
                             <span>
-                                <img src="uploads/mobile.png" width="100%" alt="">
+                                <img src="{% static 'shopping/uploads/mobile.png' %}" width="100%" alt="">
                             </span>
                             <p>
                                 Apple iPhone 6s (A1700) 64G 玫瑰金色 移动联通电信4G手机 硅胶透明防摔软壳 本色系列
