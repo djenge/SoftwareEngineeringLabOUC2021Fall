@@ -9,4 +9,10 @@ class GoodsAdmin(admin.ModelAdmin):
     class Meta:
         model = GoodsValue
 
+class ArticleCategoryAdmin(admin.ModelAdmin):
+
+    class Meta:
+        model = ArticleCategory
+
 admin.site.register(GoodsValue, GoodsAdmin)
+admin.site.register(ArticleCategory, ArticleCategoryAdmin)

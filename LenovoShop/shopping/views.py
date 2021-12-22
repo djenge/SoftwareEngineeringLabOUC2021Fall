@@ -120,21 +120,21 @@ def buy_cart(request):
 
 
 # 计算商品总价
-def tatal_price(request):
+def total_price(request):
      if request.method == 'GET':
         user = request.user
         # 获取购物车中的商品信息
         carts = CartInfo.objects.filter(user=user)
-        tatal_price = 0
+        total_price = 0
         num = 0
         for cart in carts:
-            tatal_price += cart.goods.g_price * cart.count
+            total_price += cart.goods.g_price * cart.count
             # 计算购物车商品件数
             num += 1
         # 总价保留2位小数
-        tatal_price = round(tatal_price, 2)
+        total_price = round(total_price, 2)
         data = {
-            'tatal_price': tatal_price,
+            'total_price': total_price,
             'num': num,
             'code': '200',
             'msg': '请求成功'

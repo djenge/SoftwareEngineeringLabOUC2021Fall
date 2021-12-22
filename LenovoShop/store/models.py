@@ -62,22 +62,31 @@ class GoodsManager(models.Manager):
 
 # 创建商品种类模型
 class ArticleCategory(models.Model):
+
     kind = models.CharField(max_length=30)  # 分类
     isDelete = models.BooleanField(default=False)  # 是否删除
 
+    def __str__(self):
+        return self.kind
+
+    def __unicode__(self):
+        return self.kind
+
     class Meta:
+        verbose_name = "种类"
+        verbose_name_plural = "种类"
         db_table = "kind"
 
 
 # 创建商品属性模型
 class GoodsValue(models.Model):
     slug = models.SlugField(blank=True)
-    g_name = models.CharField(max_length=50)  # 商品名称
-    g_img = models.ImageField(upload_to=upload_image_path, null=True, blank=True)  # 商品图片
-    g_price = models.DecimalField(max_digits=20, decimal_places=4, default=1000)  # 商品价格
-    g_repertory = models.IntegerField(default=0)  # 商品库存
-    g_created_at = models.DateTimeField(auto_now_add=True)
-    g_description = models.TextField()  # 商品描述
+    title = models.CharField(max_length=50)  # 商品名称
+    image = models.ImageField(upload_to=upload_image_path, null=True, blank=True)  # 商品图片
+    price = models.DecimalField(max_digits=20, decimal_places=4, default=1000)  # 商品价格
+    repertory = models.IntegerField(default=0)  # 商品库存
+    created_at = models.DateTimeField(auto_now_add=True)
+    description = models.TextField()  # 商品描述
     isDelete = models.BooleanField(default=False)  # 是否删除
     featured = models.BooleanField(default=False)
     active = models.BooleanField(default=False)
@@ -88,10 +97,10 @@ class GoodsValue(models.Model):
     objects = GoodsManager()
 
     def __str__(self):
-        return self.g_name
+        return self.title
 
     def __unicode__(self):
-        return self.g_name
+        return self.title
 
     class Meta:
         verbose_name = "商品"
