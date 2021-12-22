@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^index/', views.index, name='index'),
     # 商城商品列表页
     url(r'^list/', views.list, name='list'),
+
 ]

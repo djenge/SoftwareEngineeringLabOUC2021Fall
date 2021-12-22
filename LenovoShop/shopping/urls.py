@@ -1,9 +1,12 @@
 from django.conf.urls import url
+from django.urls import include, path
 
 from shopping import views
 
 urlpatterns = [
     # 商品详情
+    url(r'^test/', views.test, name='test'),
+    path('store/', include('store.urls')),
     url(r'^detail/', views.detail, name='detail'),
     # 增加商品数量
     url(r'^addgoods/', views.add_goods, name='addgoods'),

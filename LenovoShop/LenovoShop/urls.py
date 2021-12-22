@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import url, include
 from django.contrib.staticfiles.urls import static
 
 urlpatterns = [
@@ -24,5 +23,6 @@ urlpatterns = [
   path('order/',include('order.urls')),
   path('store/',include('store.urls')),
   path('shopping/',include('shopping.urls')),
+  path('comments/', include('django_comments.urls'))
 ]
 
