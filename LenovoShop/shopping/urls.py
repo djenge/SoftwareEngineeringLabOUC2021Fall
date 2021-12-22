@@ -19,7 +19,7 @@ urlpatterns = [
     # 立即购买
     url(r'^buycart/', views.buy_cart, name='buycart'),
     # 计算商品总价
-    url(r'^tatalprice/', views.tatal_price, name='tatalprice'),
+    url(r'^totalprice/', views.total_price, name='totalprice'),
     # 删除购物车商品
     url(r'^delgoodscart/', views.del_goods_cart, name='delgoodscart'),
 
