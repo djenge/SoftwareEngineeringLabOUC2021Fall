@@ -21,17 +21,11 @@ from .views import home_page
 urlpatterns = [
   path('', home_page, name='home_url'),
   path('admin/', admin.site.urls),
-<<<<<<< HEAD
   path('user/',include('user.urls')),
   path('order/',include('order.urls')),
   path('store/',include('store.urls')),
   path('shopping/',include('shopping.urls')),
   path('comments/', include('django_comments.urls'))
-=======
-  path('user/', include('user.urls')),
-  path('order/', include('order.urls')),
-  path('store/', include('store.urls')),
-  path('shopping/', include('shopping.urls')),
->>>>>>> se/linbitang
+
 ]
 
