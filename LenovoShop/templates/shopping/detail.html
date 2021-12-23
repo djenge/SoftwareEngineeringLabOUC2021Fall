@@ -1,203 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="{% static 'shopping/css/normalize.css' %}" />
-    <link rel="stylesheet" href="{% static 'shopping/css/base.css' %}" />
-    <link rel="stylesheet" href="{% static 'shopping/css/detail.css' %}" />
-    <script src="{% static 'shopping/js/jquery.min.js' %}"></script>
-    <script src="{% static 'shopping/js/base.js' %}"></script>
-    <script src="{% static 'shopping/js/detail.js' %}"></script>
-</head>
-<body>
-    <header>
-        <!-- <a href="#">
-            <img src="images/header.jpg" height="80"  width="100%" alt="" >
-        </a> -->
-    </header>
-    <div class="shortcut">
-        <div class="w">
-            <ul class="fl city">
-                <li><i class="f10"></i><a href="#">北京</a></li>
-            </ul>
-            <ul class="fr nav">
-                <li>
-                    <a href="login.html">你好，请登录</a>
-                    <a href="register.html" class="f10">免费注册</a>
-                </li>
-                <li class="space"></li>
-                <li>
-                    <a href="pay.html">我的订单</a>
-                </li>
-                <li class="space"></li>
-                <li>
-                    <a href="#">我的联想</a>
-                    <i></i>
-                    <div class="dropdown-layer">
-                        <dl class="d">
-                            <dd><a href="#">待处理订单</a></dd>
-                            <dd><a href="#">返修退换货</a></dd>
-                            <dd><a href="#">降价商品</a></dd>
-                        </dl>
-                        <dl class="d">
-                            <dd><a href="#">消息</a></dd>
-                            <dd><a href="#">我的问答</a></dd>
-                            <dd><a href="#">我的关注</a></dd>
-                        </dl>
-                        <dl>
-                            <!-- <dd><a href="#">我的联想</a></dd> -->
-                            <!-- <dd><a href="#">我的白条</a></dd> -->
-                        </dl>
-                        <dl>
-                            <dd><a href="#">我的优惠券</a></dd>
-                            <dd><a href="#">我的理财</a></dd>
-                        </dl>
-                    </div>
-                </li>
-                <li class="space"></li>
-                <li>
-                    <a href="#">联想会员</a>
-                </li>
-                <li class="space"></li>
-                <li>
-                    <a href="#">企业采购</a>
-                </li>
-                <li class="space"></li>
-                <li>
-                    <a href="#">客户服务</a>
-                    <i></i>
-                    <div class="dropdown-layer">
-                        <dl class="d">
-                            <dd><a href="#">待处理订单</a></dd>
-                            <dd><a href="#">返修退换货</a></dd>
-                            <dd><a href="#">降价商品</a></dd>
-                        </dl>
-                        <dl class="d">
-                            <dd><a href="#">消息</a></dd>
-                            <dd><a href="#">我的问答</a></dd>
-                            <dd><a href="#">我的关注</a></dd>
-                        </dl>
-                        <dl>
-                            <!-- <dd><a href="#">我的京豆</a></dd> -->
-                            <!-- <dd><a href="#">我的白条</a></dd> -->
-                        </dl>
-                        <dl>
-                            <dd><a href="#">我的优惠券</a></dd>
-                            <dd><a href="#">我的理财</a></dd>
-                        </dl>
-                    </div>
-                </li>
-                <li class="space"></li>
-                <li>
-                    <a href="#">网站导航</a>
-                    <i></i>
-                    <div class="dropdown-layer">
-                        <dl class="d">
-                            <dd><a href="#">待处理订单</a></dd>
-                            <dd><a href="#">返修退换货</a></dd>
-                            <dd><a href="#">降价商品</a></dd>
-                        </dl>
-                        <dl class="d">
-                            <dd><a href="#">消息</a></dd>
-                            <dd><a href="#">我的问答</a></dd>
-                            <dd><a href="#">我的关注</a></dd>
-                        </dl>
-                        <dl>
-                            <!-- <dd><a href="#">我的京豆</a></dd>
-                            <dd><a href="#">我的白条</a></dd> -->
-                        </dl>
-                        <dl>
-                            <dd><a href="#">我的优惠券</a></dd>
-                            <dd><a href="#">我的理财</a></dd>
-                        </dl>
-                    </div>
-                </li>
-                <li class="space"></li>
-                
-            </ul>
-        </div>
-    </div>
-    <div class="m">
-        <div class="w middle">
-            <div class="logo">
-            <h1>  <!-- 提高权重 便利于搜索引擎优化 -->
-                <!-- <a href="index.html" title="">联想</a>    -->
-            </h1>
-            </div>
-            <div class="form">
-                <input id="text" type="text" placeholder="扫描仪">
-                <button><i></i></button> 
-            </div>
-            <div class="shopCar">
-                <i></i><a href="cart.html" class="f10">我的购物车</a><span>8</span>
-            </div>
-            <div class="hotwords">
-                <a href="#" class="f10">199减100</a>
-                <a href="#">鼠标试用</a>
-                <a href="#">智能手表</a>
-            </div>
-            <div class="navitems">
-            <ul>
-                <li><a href="list.html">新品</a></li>
-                <li><a href="#">定制</a></li>
-                <li><a href="#">合伙人</a></li>
-                <li><a href="#">以旧换新</a></li>
-                <li class="space "></li>
-                <li><a href="#">0元使用</a></li>
-                <li><a href="#">乐豆购</a></li>
-                 <li><a href="#">学生</a></li> 
-                <li><a href="#">企业购</a></li>
-                <li class="space"></li>
-                <li><a href="#">0元购</a></li> 
-            </ul>
-            </div>
-           
-        </div>
-    </div>
+{% extends 'shopping/base.html' %}
+{% load static %}
+
+{% block title %}
+{{product.header}}
+{% endblock %}
+
+{% block body %}
     <div class="de_container">
         <div class="w">
             <div class="crumb_wrap">
-                <a href="#">首页</a> > 
-                <a href="#">商品详情</a> > 
-                <a href="#">YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑</a> > 
+                <a href="#">首页</a> >
+                <a href="#">YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑</a> >
                 <!-- <a href="#">iphone 6S系类</a>  -->
             </div>
             <div class="product_intro">
                 <div class="preview_wrap fl">
                     <div class="preview_img">
-                        <img src="{% static 'shopping/uploads/b1.jpg' %}" width="100%" alt="">
+                        <img src="{{ goods.g_img }}" width="100%" alt="">
                         <div class="mask"></div>
                         <div class="big">
-                            <img src="{% static 'shopping/uploads/b1.jpg' %}" width="800px" alt="" class="bigimg">
+                            <img src="{{ goods.g_img }}" width="800px" alt="" class="bigimg">
                         </div>
                     </div>
                     <div class="preview_list">
                         <a href="javascript:;" class="arrow_prev"><</a>
                         <a href="javascript:;" class="arrow_next">></a>
                         <ul class="list_item">
-                            <li class="current"><img src="{% static 'shopping/uploads/b1.jpg' %}" alt="" width="56px"></li>
-                            <li><img src="{% static 'shopping/uploads/b2.jpg' %}" alt="" width="56px"></li>
-                            <li><img src="{% static 'shopping/uploads/b3.jpg' %}" alt="" width="56px"></li>
-                            <li><img src="{% static 'shopping/uploads/b4.jpg' %}" alt="" width="56px"></li>
-                            <li><img src="{% static 'shopping/uploads/b5.jpg' %}" alt="" width="56px"></li>
+                            <li class="current"><img src="{{ goods.g_img }}" alt="" width="56px"></li>
+                            <li><img src="{{ goods.g_img }}" alt="" width="56px"></li>
+                            <li><img src="{{ goods.g_img }}" alt="" width="56px"></li>
+                            <li><img src="{{ goods.g_img }}" alt="" width="56px"></li>
+                            <li><img src="{{ goods.g_img }}" alt="" width="56px"></li>
                         </ul>
                     </div>
                 </div>
                 <div class="itemInfo_wrap fr">
                     <div class="sku_name">
-                        【YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑
+                        {{ goods.g_name }}
                     </div>
                     <div class="news">
-                        AMD Ryzen7 5800U/Windows 11 家庭中文版/14.0英寸/16G/512G SSD/集成显卡/2.8K OLED触控屏/皓月银
+                        {{ goods.g_description }}
                     </div>
                     <div class="summary">
                         <dl class="summary_price">
                             <dt>商城价</dt>
                             <dd>
-                                <i class="price">¥7299.00</i> 
-                                <a href="#">降价通知</a>
-                                <div class="remark">累计评价51万+</div>
+                                <i class="price">{{ goods.g_price }}</i>
                             </dd>
                         </dl>
                         <dl class="summary_promotion">
@@ -271,4 +119,94 @@
                     </div>
                 </div>
             </div>
-           
+        </div>
+    </div>
+{% load comments %}
+{% get_comment_list for goods as comments %}
+                <footer>
+                    <ul class="stats">
+                        <li><a href="/sort-{{ goods.category.id }}.html">{{ goods.category.name }}</a></li>
+                        <li><a href="#" class="icon fa-heart">28</a></li>
+                        <li><a href="#" class="icon fa-comment">{{ comments|length}}</a></li>
+                        <li><a href="#" onclick="return false;" class="icon fa-eye">{{ goods.views }}</a></li>
+                    </ul>
+                </footer>
+                <h3>评论列表</h3>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        {% for comment in comments %}
+                            <div class="blog_comment" name="F{{comment.id}}">
+                                <p class="comment_title">
+                                    {{ comment.submit_date|date:"Y-m-d H:i"}} @ {{ comment.user_name }} ：
+                                </p>
+                                <p class="comment_content">{{ comment.comment }}</p>
+                            </div>
+                        {% empty %}
+                            <span>暂无评论</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <h3>新的评论</h3>
+                {% get_comment_form for show as blog_form %}
+
+                <form id="comment_form"
+                    class="form-horizontal"
+                    action="{% comment_form_target %}"
+                    method="post"
+                >
+                    {% csrf_token %}
+
+                    {# 必须的字段 #}
+                    {{ blog_form.object_pk }}
+                    {{ blog_form.content_type }}
+                    {{ blog_form.timestamp }}
+                    {{ blog_form.site }}
+                    {{ blog_form.submit_date }}
+                    {{ blog_form.security_hash }}
+                    {# 用户名字段，这个后面会修改为登录用户评论，无需填这个 #}
+                    <div class="control-group">
+                        <label class="control-label" for="id_name">名称： </label>
+                        <div class="controls">
+                            <input type="text"
+                                id="id_name" class="input-xlarge" name="name"
+                                placeholder="您的姓名"
+                                value="{{ user.username }}" />
+                        </div>
+                    </div>
+                    {# 邮箱地址字段 #}
+                    <div class="control-group">
+                        <label class="control-label" for="id_email">邮箱： </label>
+                        <div class="controls">
+                            <input type="email"
+                                id="id_email" class="input-xlarge" name="email"
+                                placeholder="您的邮箱"
+                                value="{{ user.email }}" />
+                        </div>
+                    </div>
+
+                    {# 评论内容 #}
+                    <a name="newcomment" id="newcomment"></a>
+                    <div class="control-group">
+                        <label class="control-label" for="id_comment">评论： </label>
+                        <div class="controls">
+                            <textarea rows="6"
+                                    id="id_comment" class="input-xlarge comment" name="comment"
+                                    placeholder="评论内容">
+                            </textarea>
+                        </div>
+                    </div>
+                    {# 防垃圾评论 #}
+                    <p style="display:none;">
+                        <label for="id_honeypot">如果你在该字段中输入任何内容，你的评论就会被视为垃圾评论。</label>
+                        <input type="text" name="honeypot" id="id_honeypot">
+                    </p>
+                    {# 表单按钮 #}
+                    <div class="controls">
+                        <div class="form-actions">
+                            <input class="btn btn-info" id="submit_btn" type="submit" name="submit" value="提交"/>
+                            <input type="hidden" name="next" value="/details-{{show.id}}.html"/>
+                        </div>
+                    </div>
+                </form>
+{% endblock %}

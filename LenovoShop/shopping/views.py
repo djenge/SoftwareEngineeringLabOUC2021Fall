@@ -1,9 +1,16 @@
 from django.shortcuts import render
+from django.template import loader
+
 from store.models import GoodsValue, ArticleCategory
 from shopping.models import CartInfo
-from django.http import JsonResponse, HttpResponseRedirect
+from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 # Create your views here.
+
+def test(request):
+    t1 = loader.get_template('shopping/detail.html')
+    context = {'h1': 'hello'}
+    return HttpResponse(t1.render(context))
 
 def detail(request):
     if request.method == 'GET':
