@@ -1,7 +1,13 @@
+
+
 <!DOCTYPE html>
 <html>
-{% load static %}
+
+{% url "shopping:detail" as shopping_detail_url %}
+{% url "user:home" as user_home_url %}
+
 	<head>
+		{% load static %}
 		<meta name="referrer" content="never">
 		<meta charset="utf-8"/>
 		<title>联想中国</title>
@@ -22,37 +28,37 @@
 							<div class="text-left">
 								<ul class="tl-nav">
 									<li id="0">
-										<a href="detail.html">
+										<a href="javascript:;">
 											特惠活动
 										</a>
 									</li>
 									<li id="1">
-										<a href="detail.html">
+										<a href="javascript:;">
 											潮范儿学生
 										</a>
 									</li>
 									<li id="2">
-										<a href="detail.html">
+										<a href="javascript:;">
 											明星单品
 										</a>
 									</li>
 									<li id="3">
-										<a href="detail.html">
+										<a href="javascript:;">
 											因你联想
 										</a>
 									</li>
 									<li id="4">
-										<a href="detail.html">
+										<a href="javascript:;">
 											服务
 										</a>
 									</li>
 									<li id="5">
-										<a href="detail.html">
+										<a href="javascript:;">
 											资讯
 										</a>
 									</li>
 									<li id="6">
-										<a href="# ">
+										<a href="javascript:; ">
 											门店
 										</a>
 									</li>
@@ -66,7 +72,7 @@
 							</div>
 							<div class="text-right fr">
 								<p class="tr-p1">
-									<a href="home"	>
+									<a href="{% url 'user:home' %}"	>
 										<img src="{% static 'index/images/picicon1.png' %}" title="我的信息">
 									</a>
 								</p>
@@ -102,10 +108,10 @@
 						</ul>
 						<div class="banner-button">
 							<p class="bb-left">
-								<a href="detail.html"><</a>
+								<a href="#javascript"><</a>
 							</p>
 							<p class="bb-right">
-								<a href="detail.html">></a>
+								<a href="#javascript">></a>
 							</p>
 						</div>
 					</div>
@@ -472,10 +478,10 @@
 									</a>
 								</li>
 							</ul>
-							<a href="detail.html" class="left">
+							<a href="#javascipt" class="left">
 								<
 							</a>
-							<a href="detail.html" class="right">
+							<a href="#javascript" class="right">
 								>
 							</a>
 						</div>
@@ -496,7 +502,7 @@
 												驱动下载及其他
 											</p>
 											<div class="bslcontent">
-												<a class="bsla" href="#" target="_blank">
+												<a class="bsla" href="{% url 'shopping:list' %}" target="_blank">
 													驱动下载
 												</a>
 												<a class="bsla" href="#" target="_blank">

@@ -3,6 +3,7 @@ from django.urls import path
 
 from store import views
 
+app_name = 'store'
 urlpatterns = [
     # 商城首页
     path('index/', views.index, name='index'),

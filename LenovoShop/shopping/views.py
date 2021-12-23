@@ -155,3 +155,13 @@ def del_goods_cart(request):
 # 加入购物车
 def add_cart(request):
     add_goods(request)
+
+# 展示商品
+def display_list(request):
+    if request.method == 'GET':
+        return render(request, 'shopping/list.html')
+
+# 查看个人购物车
+def my_cart(request):
+    if request.method == 'GET':
+        return render(request, 'shopping/cart.html')

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+    {% load static %}
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="{% static 'shopping/css/normalize.css' %}" />
     <link rel="stylesheet" href="{% static 'shopping/css/base.css' %}" />
@@ -16,8 +17,8 @@
             </ul>
             <ul class="fr nav">
             <li>
-                <a href="login.html">你好，请登录</a>
-                <a href="register.html" class="f10">免费注册</a>
+                <a href="{% url 'user:login' %}">你好，请登录</a>
+                <a href="{% url 'user:register' %}" class="f10">免费注册</a>
             </li>
             <li class="space"></li>
             <li>

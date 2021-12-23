@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="utf-8">
 	<title>列表页</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
@@ -18,7 +19,7 @@
     <div class="shortcut">
         <div class="w">
             <ul class="fl city">
-                <li><i class="f10"></i><a href="#">北京</a></li>
+                <li><i class="f10"></i><a href="#">青岛</a></li>
             </ul>
             <ul class="fr nav">
             <li>
@@ -37,7 +38,7 @@
                     <dl class="d">
                         <dd><a href="#">待处理订单</a></dd>
                         <dd><a href="#">返修退换货</a></dd>
-                        <dd><a href="#">降价商品</a></dd>
+                        {% comment %} <dd><a href="#">降价商品</a></dd> {% endcomment %}
                     </dl>
                     <dl class="d">
                         <dd><a href="#">消息</a></dd>

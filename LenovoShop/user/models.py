@@ -14,6 +14,14 @@ class UserModel(models.Model):
 
     class Meta:
         db_table = 'users'
+        verbose_name = "用户"
+        verbose_name_plural = "用户"
+
+    def __str__(self):
+        return self.username
+
+    def __unicode__(self):
+        return self.username
 
 
 # 创建用户Ticket模型

@@ -13,7 +13,7 @@ from django.contrib.auth import logout
 # 个人主页
 def home(request):
     if request.user.is_authenticated:
-        return render(request, 'home/index.html')
+        return render(request, 'profile/profile.html')
     else:    
         date = "you are not login in"
         return HttpResponseRedirect('/user/login')
@@ -70,7 +70,7 @@ def login(request):
         if not all([username, password]):
             data['msg'] = '请填写完整的用户名或密码'
             print(data)
-            return render(request, 'login/login.html', {'data':data})
+            return render(request, 'profile/profile.html', {'data':data})
             
             
         # 验证用户是否注册

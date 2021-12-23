@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>联想-欢迎注册</title>
-    <link rel="stylesheet" href="../../static/register/regist.css">
-    <link rel="stylesheet" href="../../static/register/reset.css">
+    <link rel="stylesheet" href="{% static 'register/regist.css' %}">
+    <link rel="stylesheet" href="{% static 'register/reset.css' %}">
 
 </head>
 <body style="background: #f6f6f6;">
@@ -34,7 +35,7 @@
     <div class="regist">
         <div class="regist_title">注册联想会员</div>
 		<div class="regist_userphoto">
-            <img src="../../static/register/add.png" alt="">
+            <img src="{% static 'register/add.png' %}" alt="">
         </div>
         
     <form class="form-signin" method="post">

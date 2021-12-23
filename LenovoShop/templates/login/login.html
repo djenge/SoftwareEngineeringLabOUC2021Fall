@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>联想-欢迎登录</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="../../static/login/css/normalize.css" />
-    <link rel="stylesheet" href="../../static/login/css/login.css" />
+    <link rel="stylesheet" href="{% static 'login/css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'login/css/login.css' %}" />
     <!-- <script src="js/jquery.min.js"></script>
     <script src="js/login.js"></script>  -->
 </head>
@@ -18,7 +19,7 @@
     </SCRIPT>
 
     <header>
-        <div class="logo"><a href="index.html"></a></div>
+        <div class="logo"><a href="{% url 'store:index' %}"></a></div>
         <b></b>
         <a href="#" class="questionnaire">
             登录页面，调查问卷
@@ -47,7 +48,7 @@
                     </ul>
                     <div class="login-w">
                         <div class="mc1">
-                            <form  method="post">
+                            <form  action='' method="post">
                                 <div class="conner">
                                 <div class="login_uname">
                                     <label for="uname"></label>
@@ -92,7 +93,7 @@
                         <a href="#"><i class="qqwx-ico"></i><span>QQ</span></a>
                         <span class="line">|</span>
                         <a href="#"><i class="qqwx-ico login-bd-last"></i><span>微信</span></a>
-                        <a href="register.html" class="gotoregist"><i></i>立即注册</a>
+                        <a href="{% url 'user:register' %}" class="gotoregist"><i></i>立即注册</a>
                     </div>
                 </div>
             </div>
