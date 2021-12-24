@@ -1,4 +1,4 @@
-from django.urls import include, re_path
+from django.urls import include, re_path, path
 
 from shopping import views
 
@@ -7,7 +7,7 @@ urlpatterns = [
     # 商品详情
     re_path(r'^test/', views.test, name='test'),
     re_path(r'^store/', include('store.urls')),
-    re_path(r'^detail/', views.detail, name='detail'),
+    path(r'^detail/<slug:slug>/$', views.GoodsDetailView.as_view(), name='detail'),
     # 增加商品数量
     re_path(r'^addgoods/', views.add_goods, name='addgoods'),
     # 减少商品数量

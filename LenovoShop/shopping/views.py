@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.template import loader
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from store.models import GoodsValue, ArticleCategory
 from shopping.models import CartInfo
@@ -15,23 +15,33 @@ def test(request):
     context = {'h1': 'hello'}
     return HttpResponse(t1.render(context))
 
+class GoodsDetailView(DetailView):
+    model = GoodsValue
 
-def detail(request):
-    if request.method == 'GET':
-        kinds = ArticleCategory.objects.all()
-        # 拿到的详情商品
-        #g_id = request.GET.get('g_id')
-        product = GoodsValue.objects.filter().first()
-        # 拿到的新品推荐商品
-        # pass
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # cart_obj, new_obj = CartInfo.objects.new_or_get(self.request)
+        # context['cart'] = cart_obj
+        return context
 
-        # data = {
-        #     'kinds': kinds,
-        #     'product': product
-        # }
-        product.save()
-        return render(request, 'shopping/detail.html', locals())
+    template_name = "shopping/detail.html"
 
+
+# def detail(request):
+#     if request.method == 'GET':
+#         kinds = ArticleCategory.objects.all()
+#         # 拿到的详情商品
+#         g_id = request.GET.get('g_id')
+#         goods = GoodsValue.objects.filter(id=g_id).first()
+#
+#         # 拿到的新品推荐商品
+#         # pass
+#
+#         data = {
+#             'kinds': kinds,
+#             'goods': goods
+#         }
+#         return render(request, 'shopping/detail.html', data)
 
 # 增加商品数量
 def add_goods(request):
