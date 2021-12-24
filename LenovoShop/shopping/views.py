@@ -20,17 +20,17 @@ def detail(request):
     if request.method == 'GET':
         kinds = ArticleCategory.objects.all()
         # 拿到的详情商品
-        g_id = request.GET.get('g_id')
-        goods = GoodsValue.objects.filter(id=g_id).first()
-
+        #g_id = request.GET.get('g_id')
+        product = GoodsValue.objects.filter().first()
         # 拿到的新品推荐商品
         # pass
 
-        data = {
-            'kinds': kinds,
-            'goods': goods
-        }
-        return render(request, 'shopping/detail.html', data)
+        # data = {
+        #     'kinds': kinds,
+        #     'product': product
+        # }
+        product.save()
+        return render(request, 'shopping/detail.html', locals())
 
 
 # 增加商品数量

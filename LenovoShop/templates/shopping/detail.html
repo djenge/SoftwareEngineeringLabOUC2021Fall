@@ -1,4 +1,4 @@
-{% extends 'shopping/base.html' %}
+{% extends 'shopping/detailBase.html' %}
 {% load static %}
 
 {% block title %}
@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block body %}
+{% load comments %}
     <div class="de_container">
         <div class="w">
             <div class="crumb_wrap">
@@ -16,36 +17,36 @@
             <div class="product_intro">
                 <div class="preview_wrap fl">
                     <div class="preview_img">
-                        <img src="{{ goods.g_img }}" width="100%" alt="">
+                        <img src="{{ product.g_img }}" width="100%" alt="">
                         <div class="mask"></div>
                         <div class="big">
-                            <img src="{{ goods.g_img }}" width="800px" alt="" class="bigimg">
+                            <img src="{{ product.image.url }}" width="800px" alt="" class="bigimg">
                         </div>
                     </div>
                     <div class="preview_list">
                         <a href="javascript:;" class="arrow_prev"><</a>
                         <a href="javascript:;" class="arrow_next">></a>
                         <ul class="list_item">
-                            <li class="current"><img src="{{ goods.g_img }}" alt="" width="56px"></li>
-                            <li><img src="{{ goods.g_img }}" alt="" width="56px"></li>
-                            <li><img src="{{ goods.g_img }}" alt="" width="56px"></li>
-                            <li><img src="{{ goods.g_img }}" alt="" width="56px"></li>
-                            <li><img src="{{ goods.g_img }}" alt="" width="56px"></li>
+                            <li class="current"><img src="{{ product.image.url }}" alt="" width="56px"></li>
+                            <li><img src="{{ product.image.url }}" alt="" width="56px"></li>
+                            <li><img src="{{ product.image.url }}" alt="" width="56px"></li>
+                            <li><img src="{{ product.image.url }}" alt="" width="56px"></li>
+                            <li><img src="{{ product.image.url }}" alt="" width="56px"></li>
                         </ul>
                     </div>
                 </div>
                 <div class="itemInfo_wrap fr">
                     <div class="sku_name">
-                        {{ goods.g_name }}
+                        {{ product.title }}
                     </div>
                     <div class="news">
-                        {{ goods.g_description }}
+                        {{ product.description }}
                     </div>
                     <div class="summary">
                         <dl class="summary_price">
                             <dt>商城价</dt>
                             <dd>
-                                <i class="price">{{ goods.g_price }}</i>
+                                <i class="price">{{ product.price }}</i>
                             </dd>
                         </dl>
                         <dl class="summary_promotion">
@@ -121,16 +122,8 @@
             </div>
         </div>
     </div>
-{% load comments %}
-{% get_comment_list for goods as comments %}
-                <footer>
-                    <ul class="stats">
-                        <li><a href="/sort-{{ goods.category.id }}.html">{{ goods.category.name }}</a></li>
-                        <li><a href="#" class="icon fa-heart">28</a></li>
-                        <li><a href="#" class="icon fa-comment">{{ comments|length}}</a></li>
-                        <li><a href="#" onclick="return false;" class="icon fa-eye">{{ goods.views }}</a></li>
-                    </ul>
-                </footer>
+
+{% get_comment_list for product as comments %}
                 <h3>评论列表</h3>
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -148,22 +141,22 @@
                 </div>
 
                 <h3>新的评论</h3>
-                {% get_comment_form for show as blog_form %}
+                {% get_comment_form for product as detail_form %}
 
                 <form id="comment_form"
                     class="form-horizontal"
                     action="{% comment_form_target %}"
                     method="post"
+
                 >
                     {% csrf_token %}
-
                     {# 必须的字段 #}
-                    {{ blog_form.object_pk }}
-                    {{ blog_form.content_type }}
-                    {{ blog_form.timestamp }}
-                    {{ blog_form.site }}
-                    {{ blog_form.submit_date }}
-                    {{ blog_form.security_hash }}
+                    {{ detail_form.object_pk }}
+                    {{ detail_form.content_type }}
+                    {{ detail_form.timestamp }}
+                    {{ detail_form.site }}
+                    {{ detail_form.submit_date }}
+                    {{ detail_form.security_hash }}
                     {# 用户名字段，这个后面会修改为登录用户评论，无需填这个 #}
                     <div class="control-group">
                         <label class="control-label" for="id_name">名称： </label>
@@ -205,8 +198,15 @@
                     <div class="controls">
                         <div class="form-actions">
                             <input class="btn btn-info" id="submit_btn" type="submit" name="submit" value="提交"/>
-                            <input type="hidden" name="next" value="/details-{{show.id}}.html"/>
+                            <input type="hidden" name="next" value="/shopping/detail"/>
                         </div>
                     </div>
                 </form>
+
+<script language="JavaScript">
+function refresh()
+{
+       parent.location.reload();
+}
+</script>
 {% endblock %}

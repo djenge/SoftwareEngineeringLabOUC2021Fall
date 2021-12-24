@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="{% static 'shopping/css/normalize.css' %}" />
     <link rel="stylesheet" href="{% static 'shopping/css/base.css' %}" />
     <link rel="stylesheet" href="{% static 'shopping/css/detail.css' %}" />
+    <link rel="stylesheet" href='{% static "shopping/css/main.css" %}'/>
 
     <link rel="stylesheet" type="text/css" href="{% static 'index/css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'index/css/common.css' %}">
     <script src="{% static 'shopping/js/jquery.min.js' %}"></script>
     <script src="{% static 'shopping/js/base.js' %}"></script>
     <script src="{% static 'shopping/js/detail.js' %}"></script>
+
+    <script src="{% static 'shopping/js/browser.min.js' %}"></script>
+    <script src="{% static 'shopping/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'shopping/js/util.js' %}"></script>
+    <script src="{% static 'shopping/js/main.js' %}"></script>
 	<title>
       {% block title %}
       {% endblock %}
@@ -168,84 +174,7 @@
 
     {% endblock %}
 
-    <div class="bottom" data-animate="move">
-				<div class="c5bwrapper">
-					<ul class="bnav clearfix">
-						<li class="clearfix">
-							<a class="bnavo" href="https://news.lenovo.com.cn/news/list.html">关于理想</a>
-							<a href="https://shop.lenovo.com.cn/investor/html/investor.html">投资者关系</a>
-							<a href="http://www.lenovocareers.com/chi/index.html">工作机会</a>
-							<a href="https://shop.lenovo.com.cn/help/contact-us.html">联系我们</a>
-							<a href="https://mall.lenovo.com.cn/">销售网点查询</a>
-							<a href="http://support.lenovo.com.cn/lenovo/wsi/station/servicestation/default.aspx">服务网点查询</a>
-						</li>
-						<li class="clearfix">
-							<a class="bnavo" href="https://shop.lenovo.com.cn/">联想商城</a>
-							<a href="https://shop.lenovo.com.cn/stryout/tryhtml/index.html">0元试用</a>
-							<a href="https://shop.lenovo.com.cn/activity/marketing/jsd/index.html">极速到家</a>
-							<a href="https://shop.lenovo.com.cn/c2c/new/c2c_center.html">联想合伙人</a>
-							<a href="https://shop.lenovo.com.cn/lenovomaker/index">私人订制</a>
-							<a href="https://shop.lenovo.com.cn/oldfornew/oldchangenew.html">以旧换新</a>
-							<a href="https://raise.lenovo.com.cn/">联想众筹</a>
-						</li>
-						<li class="clearfix">
-							<a class="bnavo" href="http://support.lenovo.com.cn/lenovo/wsi/index.html">联想服务</a>
-							<a href="http://support.lenovo.com.cn/lenovo/wsi/Modules/NewDrive.aspx">驱动与软件下载</a>
-							<a href="http://iknow.lenovo.com/">联想知识库</a>
-							<a href="http://robot.lenovo.com.cn/lenovo/?channel=H325B">24小时智能客服</a>
-							<a href="http://support.lenovo.com.cn/lenovo/wsi/Modules/Newbxpz.aspx">保修配置查询</a>
-							<a href="http://support.lenovo.com.cn/lenovo/wsi/htmls/policylist_1349943520435.aspx">服务政策查询</a>
-							<a href="http://www.xiangbangbang.cn/pc?utm_source=lenovoPC&utm_content=index">上门快修</a>
-							<a href="https://shop.lenovo.com.cn/home/serviceindex.html?tag=a111&intcmp=SS_F_YCBX&SourceFlag=Support_MA&CheckCode=Test123">延长保修</a>
-							<a href="http://www.ms.lenovo.com/">联想IT管理服务</a>
-						</li>
-						<li class="clearfix">
-							<a class="bnavo" href="https://news.lenovo.com.cn/news/list.html">关于理想</a>
-							<a href="http://capital.lenovo.com/default.html">联想创投</a>
-							<a href="https://www.lenovovip.com.cn/">聚享汇</a>
-							<a href="https://guanjia.lenovo.com.cn/">联想电脑管家</a>
-							<a href="http://www.lenovocloud.com/">联想超融合</a>
-							<a href="http://research.lenovo.com/">联想研究院</a>
-							<a href="http://www.lenovohit.com/">智慧医疗</a>
-							<a href="https://www.baiying.cn/">联想百应平台</a>
-							<a href="http://rental.lenovo.com.cn/">联想租赁商城</a>
-							<a href="https://box.lenovo.com/?C=LXGW">联想企业网盘</a>
-							<a href="https://www.thinkpad.com/index.html">ThinkPad官网</a>
-							<a href="https://www.lecoo.com/">lecoo商城</a>
-						</li>
-						<li class="clearfix">
-							<h6 class="bnavo bh6">联想官方教育平台</h6>
-							<ul class=""></ul>
-						</li>
-					</ul>
-				</div>
-				<div class="footbt">
-					<div class="btwrapper">
-						<div class="fbtleft clearfix">
-							<p>版权所有：1998-2018 联想集团</p>
-							<span>|</span>
-							<a href="#">法律公告</a>
-							<span>|</span>
-							<a href="#">隐私保护</a>
-							<span>|</span>
-							<a href="#">产品安全</a>
-						</div>
-						<div class="fbtright clearfix">
-							<p>京ICP备11035381</p>
-							<span>|</span>
-							<p>京公网安备110108007970号</p>
-							<span>|</span>
-							<p>营业执照：11000041012732</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="jibrower">
-				<div class="c5bwrapper">
-					<h1 class="jbh1">温馨提示：您当前的浏览器版本过低，存在安全风险，不能实现完美体验,建议升级浏览器</h1>
-					<p class="tc"><a href="#"><img class="jibimg" src="{% static 'index/images/center52.jpg' %}"/></a></p>
-				</div>
-			</div>
+
 </body>
 <script type="text/javascript" charset="htf-8" src="{% static 'index/js/jquery-1.11.1.min.js' %}"></script>
 	<script type="text/javascript" charset="htf-8" src="{% static 'index/js/common.js' %}"></script>
