@@ -18,6 +18,7 @@ def test(request):
 class GoodsDetailView(DetailView):
     model = GoodsValue
 
+<<<<<<< HEAD
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # cart_obj, new_obj = CartInfo.objects.new_or_get(self.request)
@@ -41,6 +42,23 @@ class GoodsDetailView(DetailView):
 #             'goods': goods
 #         }
 #         return render(request, 'shopping/detail.html', data)
+=======
+def detail(request):
+    if request.method == 'GET':
+        kinds = ArticleCategory.objects.all()
+        # 拿到的详情商品
+        #g_id = request.GET.get('g_id')
+        product = GoodsValue.objects.filter().first()
+        # 拿到的新品推荐商品
+        # pass
+
+        # data = {
+        #     'kinds': kinds,
+        #     'product': product
+        # }
+        product.save()
+        return render(request, 'shopping/detail.html', locals())
+>>>>>>> 9d6f48030d697f02720c02f4c19ebf2f132f0c1c
 
 
 # 增加商品数量
