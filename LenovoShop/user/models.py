@@ -12,6 +12,7 @@ class UserModel(models.Model):
     addressee_p = models.CharField(max_length=6, default='')     # 收件人邮编
     direction = models.CharField(max_length=100, default='')     # 收件人地址
 
+
     class Meta:
         db_table = 'users'
         verbose_name = "用户"

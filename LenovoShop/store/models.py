@@ -1,5 +1,5 @@
 import os
-from random import random
+import random
 
 from django.db import models
 
@@ -8,6 +8,7 @@ from django.db.models import Q
 from django.db.models.signals import pre_save
 
 from LenovoShop.utils import unique_slug_generator
+from django.urls import reverse
 
 
 def get_filename_ext(filepath):
@@ -18,7 +19,8 @@ def get_filename_ext(filepath):
 
 def upload_image_path(instance, filename):
     name, ext = get_filename_ext(filename)
-    new_filename = random.randint(1, 123123123123)
+    new_filename = random.randint(1, 123123123124)
+    print(new_filename)
     final_name = f"{new_filename}{ext}"
     return f"products/{final_name}"
 
@@ -42,7 +44,7 @@ class ProductQuerySet(models.query.QuerySet):
 
 class GoodsManager(models.Manager):
     def get_queryset(self):
-        return
+        return ProductQuerySet(self.model, using=self._db)
 
     def all(self):
         return self.get_queryset().active()
@@ -84,6 +86,7 @@ class GoodsValue(models.Model):
     title = models.CharField(max_length=50)  # 商品名称
     image = models.ImageField(upload_to=upload_image_path, null=True, blank=True)  # 商品图片
     price = models.DecimalField(max_digits=20, decimal_places=4, default=1000)  # 商品价格
+    original_price = models.DecimalField(max_digits=20, decimal_places=4, default=5000, blank=True) # 商品原价
     repertory = models.IntegerField(default=0)  # 商品库存
     created_at = models.DateTimeField(auto_now_add=True)
     description = models.TextField()  # 商品描述
@@ -95,6 +98,10 @@ class GoodsValue(models.Model):
 
     # Manager
     objects = GoodsManager()
+
+    def get_absolute_url(self):
+        # return f"/products/detail/{self.slug}/"
+        return reverse('shopping:detail', kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.title

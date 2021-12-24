@@ -23,7 +23,7 @@ urlpatterns = [
     # 删除购物车商品
     re_path(r'^delgoodscart/', views.del_goods_cart, name='delgoodscart'),
     # 所有商品展示
-    re_path(r'^list/', views.display_list, name='list'),
+    re_path(r'^list/', views.GoodsListView.as_view(), name='list'),
     # 展示个人购物车
-    re_path(r'^mycart', views.my_cart, name='cart'),
+    re_path(r'^mycart', views.my_cart, name='my_cart'),
 ]

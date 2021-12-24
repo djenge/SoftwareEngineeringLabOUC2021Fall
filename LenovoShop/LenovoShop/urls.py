@@ -16,7 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.staticfiles.urls import static
+
+from . import settings
 from .views import home_page
+
 
 urlpatterns = [
   path('', home_page, name='home_url'),
@@ -27,5 +30,5 @@ urlpatterns = [
   path('shopping/',include('shopping.urls')),
   path('comments/', include('django_comments.urls'))
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

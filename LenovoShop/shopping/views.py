@@ -1,16 +1,20 @@
 from django.shortcuts import render
 from django.template import loader
+from django.views.generic import ListView
 
 from store.models import GoodsValue, ArticleCategory
 from shopping.models import CartInfo
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.urls import reverse
+
+
 # Create your views here.
 
 def test(request):
     t1 = loader.get_template('shopping/detail.html')
     context = {'h1': 'hello'}
     return HttpResponse(t1.render(context))
+
 
 def detail(request):
     if request.method == 'GET':
@@ -31,7 +35,7 @@ def detail(request):
 
 # 增加商品数量
 def add_goods(request):
-     if request.method == 'POST':
+    if request.method == 'POST':
         user = request.user
         data = {}
         if user.id:
@@ -55,9 +59,10 @@ def add_goods(request):
         data['msg'] = '请登录后再使用'
         return JsonResponse(data)
 
+
 # 减少商品数量
 def sub_goods(request):
-     if request.method == 'POST':
+    if request.method == 'POST':
         user = request.user
         data = {}
         if user.id:
@@ -84,6 +89,7 @@ def sub_goods(request):
             data['code'] = '1001'
             data['msg'] = '请登录后再使用'
             return JsonResponse(data)
+
 
 # 刷新商品增添/减少数量, 单个商品总价刷新
 def goods_num(request):
@@ -128,7 +134,7 @@ def buy_cart(request):
 
 # 计算商品总价
 def total_price(request):
-     if request.method == 'GET':
+    if request.method == 'GET':
         user = request.user
         # 获取购物车中的商品信息
         carts = CartInfo.objects.filter(user=user)
@@ -148,6 +154,7 @@ def total_price(request):
         }
         return JsonResponse(data)
 
+
 # 删除购物车商品
 def del_goods_cart(request):
     if request.method == 'GET':
@@ -163,10 +170,12 @@ def del_goods_cart(request):
 def add_cart(request):
     add_goods(request)
 
-# 展示商品
-def display_list(request):
-    if request.method == 'GET':
-        return render(request, 'shopping/list.html')
+
+# 展示商品，需要定义一个类来继承ListView类
+class GoodsListView(ListView):
+    queryset = GoodsValue.objects.all()
+    template_name = 'shopping/list.html'
+
 
 # 查看个人购物车
 def my_cart(request):
