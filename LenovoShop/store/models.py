@@ -100,8 +100,8 @@ class GoodsValue(models.Model):
     objects = GoodsManager()
 
     def get_absolute_url(self):
-        # return f"/products/detail/{self.slug}/"
-        return reverse('shopping:detail', kwargs={"slug": self.slug})
+         return f"/shopping/detail/{self.slug}/"
+        # return reverse('shopping:detail', kwargs={"id": self.id})
 
     def __str__(self):
         return self.title

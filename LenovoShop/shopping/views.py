@@ -15,11 +15,13 @@ def test(request):
     context = {'h1': 'hello'}
     return HttpResponse(t1.render(context))
 
+
 class GoodsDetailView(DetailView):
     model = GoodsValue
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        print(context)
         # cart_obj, new_obj = CartInfo.objects.new_or_get(self.request)
         # context['cart'] = cart_obj
         return context

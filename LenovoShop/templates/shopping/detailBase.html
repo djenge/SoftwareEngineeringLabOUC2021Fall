@@ -38,12 +38,12 @@
             </ul>
             <ul class="fr nav">
                 <li>
-                    <a href="login.html">你好，请登录</a>
-                    <a href="register.html" class="f10">免费注册</a>
+                    <a href="{% url 'user:login' %}">你好，请登录</a>
+                    <a href="{% url 'user:register' %}" class="f10">免费注册</a>
                 </li>
                 <li class="space"></li>
                 <li>
-                    <a href="pay.html">我的订单</a>
+                    <a href="#">我的订单</a>
                 </li>
                 <li class="space"></li>
                 <li>
@@ -145,7 +145,7 @@
                 <button><i></i></button>
             </div>
             <div class="shopCar">
-                <i></i><a href="cart.html" class="f10">我的购物车</a><span>8</span>
+                <i></i><a href="#" class="f10">我的购物车</a><span>8</span>
             </div>
             <div class="hotwords">
                 <a href="#" class="f10">199减100</a>
@@ -154,7 +154,7 @@
             </div>
             <div class="navitems">
             <ul>
-                <li><a href="list.html">新品</a></li>
+                <li><a href="{% url 'shopping:list' %}">新品</a></li>
                 <li><a href="#">定制</a></li>
                 <li><a href="#">合伙人</a></li>
                 <li><a href="#">以旧换新</a></li>

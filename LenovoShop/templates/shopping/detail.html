@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-{{product.header}}
+{{ object.title }}
 {% endblock %}
 
 {% block body %}
@@ -10,43 +10,43 @@
     <div class="de_container">
         <div class="w">
             <div class="crumb_wrap">
-                <a href="#">首页</a> >
-                <a href="#">YOGA Pro14s (Yoga Slim 7）Carbon锐龙版14英寸轻薄笔记本电脑</a> >
+                <a href="{% url 'store:index' %}">首页</a> >
+                <a href="#">{{ object.title }}</a> >
                 <!-- <a href="#">iphone 6S系类</a>  -->
             </div>
             <div class="product_intro">
                 <div class="preview_wrap fl">
                     <div class="preview_img">
-                        <img src="{{ product.g_img }}" width="100%" alt="">
+                        <img src="{{ object.image.url }}" width="100%" alt="">
                         <div class="mask"></div>
                         <div class="big">
-                            <img src="{{ product.image.url }}" width="800px" alt="" class="bigimg">
+                            <img src="{{ object.image.url }}" width="800px" alt="" class="bigimg">
                         </div>
                     </div>
                     <div class="preview_list">
                         <a href="javascript:;" class="arrow_prev"><</a>
                         <a href="javascript:;" class="arrow_next">></a>
                         <ul class="list_item">
-                            <li class="current"><img src="{{ product.image.url }}" alt="" width="56px"></li>
-                            <li><img src="{{ product.image.url }}" alt="" width="56px"></li>
-                            <li><img src="{{ product.image.url }}" alt="" width="56px"></li>
-                            <li><img src="{{ product.image.url }}" alt="" width="56px"></li>
-                            <li><img src="{{ product.image.url }}" alt="" width="56px"></li>
+                            <li class="current"><img src="#" alt="" width="56px"></li>
+                            <li><img src="{{ object.image.url }}" alt="" width="56px"></li>
+                            <li><img src="{{ object.image.url }}" alt="" width="56px"></li>
+                            <li><img src="{{ object.image.url }}" alt="" width="56px"></li>
+                            <li><img src="{{ object.image.url }}" alt="" width="56px"></li>
                         </ul>
                     </div>
                 </div>
                 <div class="itemInfo_wrap fr">
                     <div class="sku_name">
-                        {{ product.title }}
+                        {{ object.title }}
                     </div>
                     <div class="news">
-                        {{ product.description }}
+                        {{ object.description }}
                     </div>
                     <div class="summary">
                         <dl class="summary_price">
                             <dt>商城价</dt>
                             <dd>
-                                <i class="price">{{ product.price }}</i>
+                                <i class="price">{{ object.price }}</i>
                             </dd>
                         </dl>
                         <dl class="summary_promotion">
@@ -115,7 +115,7 @@
                                 <a href="javascript:;" class="add">+</a>
                                 <a href="javascript:;" class="reduce">-</a>
                             </div>
-                            <a href="cart.html" class="addCar">加入购物车</a>
+                            <a href="{% static 'shopping/cart.html' %}" class="addCar">加入购物车</a>
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
         </div>
     </div>
 
-{% get_comment_list for product as comments %}
+{% get_comment_list for object as comments %}
                 <h3>评论列表</h3>
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -139,9 +139,9 @@
                         {% endfor %}
                     </div>
                 </div>
-
+{% if request.user.is_authenticated %}
                 <h3>新的评论</h3>
-                {% get_comment_form for product as detail_form %}
+                {% get_comment_form for object as detail_form %}
 
                 <form id="comment_form"
                     class="form-horizontal"
@@ -202,7 +202,9 @@
                         </div>
                     </div>
                 </form>
-
+{% else %}
+    发表评论请先登录！
+{% endif %}
 <script language="JavaScript">
 function refresh()
 {

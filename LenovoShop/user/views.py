@@ -1,5 +1,6 @@
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
+from django.views.decorators.csrf import csrf_exempt
 from user.models import UserModel ,UserTicketModel
 from django.contrib.auth.hashers import make_password, check_password
 from django.http import HttpResponseRedirect
@@ -54,6 +55,7 @@ def register(request):
         return HttpResponseRedirect('/user/login')
 
 # 登陆
+@csrf_exempt
 def login(request):
     if request.method == 'GET':
         return render(request, 'login/login.html')

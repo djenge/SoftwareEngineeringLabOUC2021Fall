@@ -3,100 +3,124 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>联想-欢迎注册</title>
-    <link rel="stylesheet" href="{% static 'register/regist.css' %}">
-    <link rel="stylesheet" href="{% static 'register/reset.css' %}">
-
+    <title>联想-欢迎登录</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'login/css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'login/css/login.css' %}" />
+    <!-- <script src="js/jquery.min.js"></script>
+    <script src="js/login.js"></script>  -->
 </head>
-<body style="background: #f6f6f6;">
-    <SCRIPT TYPE="text/javascript"> 
+
+<body>
+    <SCRIPT TYPE="text/javascript">
         function popup(temp) {
             alert(temp);
         }
     </SCRIPT>
 
-    <div class="header">
-        <div class="word">
-            <ul>
-                <li>联想首页</li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+    <header>
+        <div class="logo"><a href="{% url 'store:index' %}"></a></div>
+        <b></b>
+        <a href="#" class="questionnaire">
+            登录页面，调查问卷
+            <b></b>
+        </a>
+    </header>
+    <div class="loginarea">
+        <div class="tips-wrapper">
+            <i></i>
+            依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版<span style="color: #333;">《隐私政策》</span>已上线，将更有利于保护您的个人隐私。
         </div>
-    </div>
-    <div class="regist">
-        <div class="regist_title">注册联想会员</div>
-		<div class="regist_userphoto">
-            <img src="{% static 'register/add.png' %}" alt="">
-        </div>
-        
-    <form class="form-signin" method="post">
-        <div class="regist_main">
-            <div class="regist_info_person">
-                <div class="regist_item">
-                    <input type="text" class="phone_person" placeholder="输入用户名" name="username">
-                    <i class="icon-clear"></i>
-                </div>
-                <div class="regist_item">
-                    <input type="text" class="phone_person" placeholder="输入邮箱" name="email">
-                    <i class="icon-clear"></i>
-                </div>
-                <div id="slider_person" class="slider"></div>
-
-                <!-- <div class="regist_item clearfix">
-                    <input type="text" id="captcha_person"  placeholder="输入验证码">
-                    <a href="javascript:;" class="captcha_person_btn">获取验证码</a>
-                </div> -->
-                <div class="regist_item">
-                    <input type="password" class="pwd" placeholder="密码由8-20位字母、数字和符号组合" name="password">
-                    <i class="icon-clear"></i>
-                </div>
-                <div class="regist_item">
-                    <input type="password" class="repwd" placeholder="再次输入密码" name="password_c">
-                    <i class="icon-clear"></i>
+        <div class="login-wrap">
+            <div class="login-bg">
+                <div class="login_form">
+                    <div class="login-tips">
+                        <i></i>
+                        联想不会以任何理由要求您转账汇款，谨防诈骗。
+                    </div>
+                    <ul class="login-tab">
+                        <!-- <li class="login-tab-l current">
+                            <a href="#">扫码登录</a>
+                        </li> -->
+                        <li class="login-tab-r">
+                            <a href="#">账号登录</a>
+                        </li>
+                    </ul>
+                    <div class="login-w">
+                        <div class="mc1">
+                            <form  action='' method="post">
+                                {% csrf_token %}
+                                <div class="conner">
+                                <div class="login_uname">
+                                    <label for="uname"></label>
+                                    <input type="text" name="username" id="uname" placeholder="用户名">
+                                </div>
+                                <div class="login_password">
+                                    <label for="password"></label>
+                                    <input type="password" name="password" id="password" placeholder="密码">
+                                </div>
+                                <div class="forgot"><a href="#">忘记密码</a></div>
+                                <input type="submit" value="登录" class="over">
+                                </div>
+                            </form>
+                        </div>
+                         <!-- <div class="mc">
+                            <div class="login-ewm">
+                                <img src="uploads/show.png" alt="">
+                            </div>
+                            <p>打开<span style="color: #e4393c;">手机联想</span> 扫描二维码</p>
+                            <ul>
+                                <li><i></i><em>免输入</em></li>
+                                <li><i class="coagent-second"></i><em>更快</em></li>
+                                <li><i class="coagent-last"></i><em>更安全</em></li>
+                            </ul>
+                        </div> -->
+                        <!-- <div class="mc">
+                            <form>
+                                <div class="login_uname">
+                                    <label for="uname"></label>
+                                    <input type="text" name="" id="uname" placeholder="邮箱/用户名/登录手机">
+                                </div>
+                                <div class="login_password">
+                                    <label for="password"></label>
+                                    <input type="password" name="" id="password" placeholder="密码">
+                                </div>
+                                <div class="forgot"><a href="#">忘记密码</a></div>
+                                <input type="submit" value="登录" class="over">
+                            </form>
+                        </div> -->
+                    </div>
+                    <div class="login-bd">
+                        <a href="#"><i class="qqwx-ico"></i><span>QQ</span></a>
+                        <span class="line">|</span>
+                        <a href="#"><i class="qqwx-ico login-bd-last"></i><span>微信</span></a>
+                        <a href="{% url 'user:register' %}" class="gotoregist"><i></i>立即注册</a>
+                    </div>
                 </div>
             </div>
-            
-            <!-- <div class="regist-error">
-                <i class="icon-error"></i>
-                <p class="regist_msg" >用户名不正确</p>
-            </div> -->
-
-            
-                <div class="regist_agreement_info">
-                    <span class="persistent"></span>
-                    <span class="agreementInfo">已阅读并同意联想 <a href="https://shop.lenovo.com.cn/investor/html/legal.html" target="_blank">使用条款</a> 和 <a href="https://www.lenovo.com.cn/statement/privacy.html" target="_blank">隐私政策</a></span>
-                </div>
-			
-            
-            <button class="regist_button" type="submit">注册</button>
-            
-			
-			
-				<div class="regist_agreement_new">
-                    <span class="regist_agreement_new_line"></span>
-					<p class="go_other"><span class="go_login">已有账号 <a href="javascript:;" class="go-login">点此登录></a></span><span class="go_companyRegist"><a href="javascript:;" class="go-companyRegist">企业会员注册></a></span></p>
-				</div>
-			
         </div>
-			<input type="hidden" id='ticket' value="e40e7004-4c8a-4963-8564-31271a8337d8" />
-	    	<input type="hidden" id="ru" value="http://www.lenovo.com.cn">
     </div>
-    </form>
+    <div class="footer">
+        <p class="links">
+            <a href="#">关于我们  |</a>
+            <a href="#">联系我们  |</a>
+            <a href="#">人才招聘  |</a>
+            <a href="#">商家入驻  |</a>
+            <a href="#">广告服务  |</a>
+            <a href="#">友情链接  |</a>
+            <a href="#">销售联盟  |</a>
+            <a href="#">English Site  |</a>
+        </p>
+    </div>
     <div>
-    {% if data %}
-    {% for key,value in data.items %}
-    <BODY onLoad="popup('{{value}}')">
-    {% endfor%}
-    {% endif %}
+        {{data}}
+        {% if data %}
+        {% for key,value in data.items %}
+        <BODY onLoad="popup('{{ value }}')">
+
+        {% endfor%}
+        {% endif %}
+        </BODY>
     </div>
 </body>
 </html>
