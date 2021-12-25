@@ -50,7 +50,7 @@
 				<div class="zuo fl">
 					<h3>
 						<a href="#"><img src="{% static 'profile/img/tx.png' %}"/></a>
-						<p class="clearfix"><span class="fl">[羊羊羊]</span><span class="fr">[退出登录]</span></p>
+						<p class="clearfix"><span class="fl">{{ user.username }}</span><a class="fr" href="{% url 'user:logout' %}">[退出登录]</a></p>
 					</h3>
 					<div>
 						<h4>我的交易</h4>
@@ -77,7 +77,7 @@
 							<a href="#" class="fl"><img src="{% static 'profile/img/tx.png' %}"/></a>
 							<p class="fl"><span>六六六</span><a href="#">修改个人信息></a></p>
 						</div>
-						<div class="fr">绑定邮箱：22****519360@qq.com</div>
+						<div class="fr">绑定邮箱：{{ user.email }}</div>
 					</div>
 					<div class="bott">
 						<div class="clearfix">

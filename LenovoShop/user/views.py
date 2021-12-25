@@ -84,3 +84,4 @@ def login(request):
 # 退出
 def logout(request):
     auth_logout(request)
+    return render(request, 'store/index.html')

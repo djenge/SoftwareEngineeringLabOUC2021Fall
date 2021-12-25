@@ -198,17 +198,15 @@
                     <div class="controls">
                         <div class="form-actions">
                             <input class="btn btn-info" id="submit_btn" type="submit" name="submit" value="提交"/>
-                            <input type="hidden" name="next" value="/shopping/detail"/>
+                            <input type="hidden" name="next" value="{{ object.get_absolute_url }}"/>
                         </div>
                     </div>
                 </form>
 {% else %}
-    发表评论请先登录！
+                <h3  href="{% url 'user:login' %}">您好，发表评论请先登录!
+                </h3>
+                <h2 style="text-align:center">
+                    <a href="{% url 'user:login' %}">登录</a>
+                </h2>
 {% endif %}
-<script language="JavaScript">
-function refresh()
-{
-       parent.location.reload();
-}
-</script>
 {% endblock %}
