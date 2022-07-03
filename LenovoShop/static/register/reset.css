@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+input,textarea{
+    outline: none;
+}
+button{
+    cursor: pointer;
+}
+p{
+    margin: none;
+}
+/* div{
+    height: 10px;
+    background: black;
+} */

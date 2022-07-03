@@ -1,0 +1,140 @@
+
+.header{
+    height: 50px;
+    font-size: 12px;
+    font-family: "微软雅黑";
+}
+.regist{
+    width: 358px;
+    /* height: 461px; */
+    padding: 52px 249px 64px 249px;
+    margin: 0px auto;
+    background-color: white;
+}
+.regist_title{
+    font-size: 30px;
+line-height: 30px;
+text-align: center;
+margin-bottom: 20px;
+}
+.regist_userphoto{
+height: 48px;
+text-align: center;
+margin-bottom: 10px;
+}
+.regist_userphoto img{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+.regist_main input{
+    border: 1px solid #d6d6d6;
+    height: 48px;
+line-height: 48px;
+padding-left: 15px;
+font-size: 14px;
+color: #8c8c8c;
+margin-bottom: 14px;
+padding-right: 50px;
+width: 291px;
+}
+#captcha_person{
+    float: left;
+    width: 180px;
+padding-left: 15px;
+
+}
+.captcha_person_btn{
+float: left;
+width: 109px;
+height: 48px;
+line-height: 48px;
+text-align: center;
+border: 1px solid #d6d6d6;
+background-color: #f7f7f7;
+}
+.regist-error{
+    height: 24px;
+line-height: 24px;
+font-size: 12px;
+color: #ef1c22;
+margin-bottom: 5px;
+}
+.icon-error{
+    width: 15px;
+height: 15px;
+float: left;
+margin-top: 4px;
+background: url(./image/err.png)
+}
+.regist_msg{
+    float: left;
+margin: 0px 0px 0px 8px;
+}
+.regist_agreement_info{
+    font-size: 13px;
+color: #606060;
+}
+.persistent{
+    display: inline-block;
+width: 14px;
+height: 14px;
+background: url(./image/persisitent.png) no-repeat 50%;
+    background-size: auto;
+background-size: contain;
+vertical-align: sub;
+cursor: pointer;
+margin-right: 3px;
+}
+.agreementInfo a{
+    color: #000;
+font-weight: 700;
+}
+.regist_button{
+    width: 358px;
+height: 50px;
+line-height: 50px;
+display: block;
+background-color: #e22319;
+text-align: center;
+font-size: 14px;
+color: #fff;
+margin-top: 10px;
+}
+
+.regist_agreement_new{
+    line-height: 24px;
+font-size: 12px;
+color: #757575;
+}
+.regist_agreement_new_line{
+    border-bottom: 1px solid #e0e0e0;
+height: 6px;
+width: 100%;
+display: inline-block;
+}
+.go_other{
+    display: block;
+font-size: 14px;
+line-height: 20px;
+margin-top: 13px;
+overflow: hidden;
+}
+.go_login{
+    float: left;
+}
+.regist_msg{
+    text-align: center;
+font-size: x-large;
+color: #ef1c22;
+font-weight: bold;
+}
+.regist_agreement_new a{
+    color: #424242;
+font-weight: 700;
+letter-spacing: 1px;
+font-size: 13px;
+}
+.go_companyRegist{
+    float: right;
+}
